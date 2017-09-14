@@ -1,0 +1,10 @@
+body{
+	background-color: powderblue;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.row{
+	background-color: grey;
+}
