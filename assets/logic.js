@@ -11,12 +11,16 @@ $.ajax({
 
     $(".topic-button").on("click", function() {
 		serachWord = $(this).attr("topic");
-		queryURL = queryURL;
+		queryURL = "http://api.giphy.com/v1/gifs/search?q=" + serachWord + "&api_key=ea862e8d744b464f8af525f59c07c55e";
 	});
+
+    $(".gif").removeAttr("style").hide();
 
     for(var i=0; i<10; i++) {
 
       var img = $("<img>");
+
+      img.addClass("gif");
       img.attr("src", response.data[i].images.fixed_width.url)
 
       $("#gif-box").append(img);
@@ -36,8 +40,32 @@ function addTopic() {
 	}
 
 	$(".topic-button").on("click", function() {
-		alert( $(this).attr("topic"));
+		serachWord = $(this).attr("topic");
+		queryURL = "http://api.giphy.com/v1/gifs/search?q=" + serachWord + "&api_key=ea862e8d744b464f8af525f59c07c55e";
+		console.log(serachWord);
+		console.log(queryURL);
+
+	$.ajax({
+  		url: queryURL,
+  		method: 'GET'
+	}).done( function(response) {
+    	console.log(response);  
+
+    	$(".gif").removeAttr("style").hide();
+
+    	for(var i=0; i<10; i++) {
+
+      		var img = $("<img>");
+
+      		img.addClass("gif");
+      		img.attr("src", response.data[i].images.fixed_width.url)
+
+  	   		 $("#gif-box").append(img);
+    	}
+    
 	});
+	});
+
 }
 
 
@@ -53,8 +81,32 @@ for(var i=0; i<topics.length; i++) {
 
 
 $(".topic-button").on("click", function() {
+
 	serachWord = $(this).attr("topic");
+	queryURL = "http://api.giphy.com/v1/gifs/search?q=" + serachWord + "&api_key=ea862e8d744b464f8af525f59c07c55e";
 	console.log(serachWord);
+	console.log(queryURL);
+
+	$.ajax({
+  		url: queryURL,
+  		method: 'GET'
+	}).done( function(response) {
+    	console.log(response);  
+
+    	$(".gif").removeAttr("style").hide();
+
+    	for(var i=0; i<10; i++) {
+
+      		var img = $("<img>");
+
+      		img.addClass("gif");
+      		img.attr("src", response.data[i].images.fixed_width.url)
+
+  	   		 $("#gif-box").append(img);
+    	}
+    
+	});
+
 });
 
 
