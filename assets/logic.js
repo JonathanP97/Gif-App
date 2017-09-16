@@ -1,7 +1,7 @@
 var topics = ["dragons", "technology", "iPhone", "android"];
 var serachWord = "iphone";
 
-var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + serachWord + "&api_key=ea862e8d744b464f8af525f59c07c55e";
+var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + serachWord + "&api_key=ea862e8d744b464f8af525f59c07c55e";
 
 $.ajax({
   url: queryURL,
@@ -11,7 +11,7 @@ $.ajax({
 
     $(".topic-button").on("click", function() {
 		serachWord = $(this).attr("topic");
-		queryURL = "http://api.giphy.com/v1/gifs/search?q=" + serachWord + "&api_key=ea862e8d744b464f8af525f59c07c55e";
+		queryURL = "https://api.giphy.com/v1/gifs/search?q=" + serachWord + "&api_key=ea862e8d744b464f8af525f59c07c55e";
 	});
 
     $(".gif").removeAttr("style").hide();
@@ -41,7 +41,7 @@ function addTopic() {
 
 	$(".topic-button").on("click", function() {
 		serachWord = $(this).attr("topic");
-		queryURL = "http://api.giphy.com/v1/gifs/search?q=" + serachWord + "&api_key=ea862e8d744b464f8af525f59c07c55e";
+		queryURL = "https://api.giphy.com/v1/gifs/search?q=" + serachWord + "&api_key=ea862e8d744b464f8af525f59c07c55e";
 		console.log(serachWord);
 		console.log(queryURL);
 
@@ -83,7 +83,7 @@ for(var i=0; i<topics.length; i++) {
 $(".topic-button").on("click", function() {
 
 	serachWord = $(this).attr("topic");
-	queryURL = "http://api.giphy.com/v1/gifs/search?q=" + serachWord + "&api_key=ea862e8d744b464f8af525f59c07c55e";
+	queryURL = "https://api.giphy.com/v1/gifs/search?q=" + serachWord + "&api_key=ea862e8d744b464f8af525f59c07c55e";
 	console.log(serachWord);
 	console.log(queryURL);
 
